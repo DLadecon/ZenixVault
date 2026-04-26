@@ -59,5 +59,17 @@ const SCRIPTS = [
     date:        "25 April 2026",
     linkvertise: "https://link-target.net/536192/Wtpo89EDqij9"
   },
+  {
+  id:          3,
+  title:       "Attack On Titan Revolution Script *NO KEY* - Auto Raids, Auto Missions & More!",
+  game:        "AOTR",
+  hub:         "LunarZ",
+  thumb:       "AOTR",
+  image:       "images/AOTR.jpg",
+  tags:        ["No Key"],
+  featured:    false,
+  date:        "26 April 2026",
+  linkvertise: "https://direct-link.net/536192/3MWBrTk2qQ4K"
+  },
 
 ];

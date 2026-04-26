@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenixVault — Roblox Script Hub</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">Zenix<span>Vault</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#" onclick="filterBy('all')">Home</a></li>
+        <li><a href="https://discord.gg/Xnm6mCTuJj" target="_blank">Discord</a></li>
+        <li><a href="https://www.youtube.com/@ZenicSscripts" target="_blank">Youtube</a></li>
+      </ul>
+
+    </div>  
+  </nav>
+
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero">
+
+    <h1>
+      Zenix <span class="highlight">Scripts Vault</span><br>
+    </h1>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num" id="totalScripts">0</div>
+        <div class="stat-label">Scripts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Updated</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       SEARCH & FILTERS
+  ══════════════════════════════════════ -->
+  <div class="search-section">
+
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search scripts..."
+        oninput="handleSearch()"
+      >
+      <button class="search-btn" onclick="handleSearch()">Search</button>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS GRID
+  ══════════════════════════════════════ -->
+  <main class="main">
+
+    <div class="section-header">
+      <div class="section-title">Latest <span>Scripts</span></div>
+      <div class="count-badge" id="countBadge">0 scripts</div>
+    </div>
+
+    <!-- Cards injected here by app.js -->
+    <div class="scripts-grid" id="scriptsGrid"></div>
+
+    <div class="no-results" id="noResults" style="display: none;">
+      <h3>No scripts found</h3>
+      <p>Try a different search term or filter.</p>
+    </div>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPT DETAIL MODAL
+  ══════════════════════════════════════ -->
+  <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+    <div class="modal" id="modal">
+
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+
+        <!-- Thumbnail -->
+        <div class="modal-thumb" id="modalThumb"></div>
+
+        <!-- Tags -->
+        <div class="modal-tags" id="modalTags"></div>
+
+        <!-- Title & description -->
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-desc"  id="modalDesc"></div>
+
+        <!-- Features list -->
+        <div class="features-grid" id="modalFeatures"></div>
+
+        <hr class="modal-divider">
+      </div>
+
+      <div class="modal-footer">
+        <!-- Meta info -->
+        <div class="modal-meta-row">
+          <div class="meta-item">
+            <strong id="modalDate">—</strong>
+            Date Added
+          </div>
+          <div class="meta-item">
+            <strong id="modalGame">—</strong>
+            Game
+          </div>
+          <div class="meta-item">
+            <strong id="modalHub">—</strong>
+            Hub / Executor
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <p>ZenixVault &copy; 2026 — For educational purposes only. Use scripts responsibly.</p>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS — load database first, then app
+  ══════════════════════════════════════ -->
+  <script src="js/database.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

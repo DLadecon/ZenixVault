@@ -46,6 +46,18 @@ const SCRIPTS = [
   featured:    false,
   date:        "26 April 2026",
   linkvertise: "https://linkvertise.com/536192/Vd0DO9EZ4z5d?o=sharing"
-},
+  },
+  {
+    id:          2,
+    title:       "Script Title Here",
+    game:        "Game Name",
+    hub:         "Hub Name",
+    thumb:       "blox",
+    image:       "images/sailor.jpg",
+    tags:        ["No Key"],
+    featured:    false,
+    date:        "25 April 2026",
+    linkvertise: "https://link-target.net/536192/Wtpo89EDqij9"
+  },
 
 ];

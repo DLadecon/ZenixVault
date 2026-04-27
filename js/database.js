@@ -65,7 +65,7 @@ const SCRIPTS = [
   game:        "AOTR",
   hub:         "LunarZ",
   thumb:       "AOTR",
-  image:       "images/AOTR.jpg",
+  image:       "images/Picsart_26-04-28_00-20-59-687.jpg",
   tags:        ["No Key"],
   featured:    false,
   date:        "26 April 2026",

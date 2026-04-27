@@ -68,7 +68,7 @@ const SCRIPTS = [
   image:       "images/Picsart_26-04-28_00-20-59-687.jpg",
   tags:        ["No Key"],
   featured:    false,
-  date:        "26 April 2026",
+  date:        "27 April 2026",
   linkvertise: "https://direct-link.net/536192/3MWBrTk2qQ4K"
   },
   {

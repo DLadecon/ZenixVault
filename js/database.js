@@ -81,6 +81,6 @@ const SCRIPTS = [
   tags:        ["No Key"],
   featured:    false,
   date:        "26 April 2026",
-  linkvertise: "https://direct-link.net/536192/3MWBrTk2qQ4K"
+  linkvertise: "https://link-target.net/536192/7O09TA0qwPAc"
   },
 ];

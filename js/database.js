@@ -61,7 +61,7 @@ const SCRIPTS = [
   },
   {
   id:          3,
-  title:       "Attack On Titan Revolution Script *NO KEY* - Auto Raids, Auto Missions & More!",
+  title:       "UPD4 Attack On Titan Revolution Script - Fast Raids, Auto Quest, Farm Prestige and More! (Pastebin) ",
   game:        "AOTR",
   hub:         "LunarZ",
   thumb:       "AOTR",
@@ -71,5 +71,16 @@ const SCRIPTS = [
   date:        "26 April 2026",
   linkvertise: "https://direct-link.net/536192/3MWBrTk2qQ4K"
   },
-
+  {
+  id:          4,
+  title:       "Attack On Titan Revolution Script *NO KEY* - Auto Raids, Auto Missions & More!",
+  game:        "AOTR",
+  hub:         "Violet Hub",
+  thumb:       "AOTR",
+  image:       "images/AOTR.jpg",
+  tags:        ["No Key"],
+  featured:    false,
+  date:        "26 April 2026",
+  linkvertise: "https://direct-link.net/536192/3MWBrTk2qQ4K"
+  },
 ];

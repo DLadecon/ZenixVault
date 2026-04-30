@@ -83,4 +83,16 @@ const SCRIPTS = [
   date:        "26 April 2026",
   linkvertise: "https://link-target.net/536192/7O09TA0qwPAc"
   },
+  {
+  id:          5,
+  title:       "Kick A Lucky Block Script *No Key* - Auto Godly Kick, Auto Claim, Auto Upgrade and More!",
+  game:        "Kick A Lucky Block",
+  hub:         "2zvh Hub",
+  thumb:       "Kick A Lucky Block",
+  image:       "images/1.jpg",
+  tags:        ["No Key"],
+  featured:    false,
+  date:        "30 April 2026",
+  linkvertise: "https://direct-link.net/536192/Q6DCsstX4dCX"
+  },
 ];

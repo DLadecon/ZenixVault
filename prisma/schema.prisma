@@ -1,0 +1,82 @@
+// Prisma schema for the Roblox Script Hub.
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Game {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String   @default("")
+  thumbnail   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  scripts Script[]
+}
+
+model Script {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  gameId      String
+  description String   @default("")
+  features    String[] @default([])
+  scriptCode  String   @default("")
+  scriptUrl   String?
+  youtubeUrl  String?
+  thumbnail   String?
+  version     String   @default("1.0")
+  category    String   @default("General")
+  tags        String[] @default([])
+  published   Boolean  @default(false)
+  featured    Boolean  @default(false)
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Restrict: a game can't be deleted while it still has scripts.
+  game Game @relation(fields: [gameId], references: [id], onDelete: Restrict)
+
+  @@index([published, createdAt(sort: Desc)])
+  @@index([gameId, published])
+  @@index([featured, published])
+  @@index([category])
+  @@index([tags], type: Gin)
+}
+
+enum VideoKind {
+  SHOWCASE
+  TUTORIAL
+}
+
+model Video {
+  id          String    @id @default(cuid())
+  title       String
+  youtubeUrl  String
+  thumbnail   String?
+  kind        VideoKind @default(SHOWCASE)
+  publishedAt DateTime  @default(now())
+
+  @@index([kind, publishedAt(sort: Desc)])
+}
+
+// Single-row table (id is always 1).
+model Settings {
+  id              Int     @id @default(1)
+  siteName        String  @default("Nebula Scripts")
+  tagline         String  @default("Roblox scripts and showcases from my YouTube channel.")
+  heroTitle       String  @default("Roblox Scripts")
+  heroSubtitle    String  @default("Discover scripts, showcases, and updates from my YouTube channel.")
+  youtubeChannel  String  @default("https://www.youtube.com/")
+  discordUrl      String  @default("")
+  logo            String?
+}

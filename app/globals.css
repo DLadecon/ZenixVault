@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/onest";
+@import "@fontsource-variable/jetbrains-mono";
+
+:root {
+  /* Core palette — token system documented in DESIGN.md */
+  --void: 8 8 14;      /* #08080e page background */
+  --panel: 15 15 24;   /* #0f0f18 card surfaces */
+  --raised: 21 21 33;  /* #151521 hovered / raised surfaces */
+  --iris: 124 108 255; /* #7c6cff primary accent (electric indigo) */
+  --azure: 74 179 255; /* #4ab3ff secondary accent (cyan-blue) */
+  --orchid: 255 108 196; /* #ff6cc4 rare tertiary accent, used sparingly */
+  --ink: 237 237 245;  /* #ededf5 primary text */
+  --mute: 148 148 168; /* #9494a8 secondary text */
+  --ok: 74 222 158;    /* #4ade9e success */
+  --danger: 255 99 99; /* #ff6363 destructive */
+}
+
+* {
+  scrollbar-color: rgb(var(--raised)) transparent;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: rgb(var(--void));
+  color: rgb(var(--ink));
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(var(--ink) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink) / 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-aurora {
+  background:
+    radial-gradient(60% 50% at 12% -10%, rgb(var(--iris) / 0.28), transparent 60%),
+    radial-gradient(50% 40% at 88% 0%, rgb(var(--azure) / 0.2), transparent 60%);
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid rgb(var(--azure));
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.text-gradient {
+  background-image: linear-gradient(100deg, rgb(var(--ink)) 30%, rgb(var(--iris)) 75%, rgb(var(--azure)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-surface {
+  background-color: rgb(var(--panel));
+  border: 1px solid rgb(var(--ink) / 0.07);
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(var(--raised));
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg, transparent, rgb(var(--ink) / 0.06), transparent);
+  animation: shimmer 1.8s infinite;
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
